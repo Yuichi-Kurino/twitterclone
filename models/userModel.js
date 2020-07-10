@@ -11,4 +11,15 @@ async function findUsersByEmail(email) {
         .select('*');
 }
 
+async function insertUser(userJSON){
+    try {
+        console.log("Inserting users into table");
+        await db('users')
+            .insert(userJSON);
+        console.log("User inserted");
+    }catch(err){
+        console.error("Insert failed", err);
+    }
+
+}
 module.exports = { findUsers, findUsersWithItems, insertUser, insertUsersWithItems};
