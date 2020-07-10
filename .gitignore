@@ -1,0 +1,7 @@
+# ignore node_modules
+.idea/
+
+# Dependency directories
+node_modules/
+
+.env
