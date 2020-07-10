@@ -12,4 +12,3 @@ async function findUsersByEmail(email) {
 }
 
 module.exports = { findUsers, findUsersWithItems, insertUser, insertUsersWithItems};
-

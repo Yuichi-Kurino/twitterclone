@@ -1,0 +1,37 @@
+1. ^Matches the beginning of lines $Matches the end of lines .Matches any single character *
+Matches zero or more occurrences of the previous character
+2. cat farm.sh | sed '1d'
+3. cat testing | sed '/^alpha/d'
+4. Matches the string The and the
+5. Matches blank lines
+6. So that the people on github cannot see the info to your database and since you can just use npm install to get those dependecies, you dont need to have them uploaded into the repo
+7. localhost
+8. indicates where the migrations folder is
+9. 20200709183320_users.js
+10. knex migrate:make posts
+11. creates a table with id, email, and password if the table does not exsist and returns the table if it does
+12. tbl.increments('id').unique().notNullable();
+        tbl.text('message').notNullable();
+        tbl.integer('user_id').notNullable();
+
+
+13. FS-related option specified for migration configuration. This resets migrationSource to default FsMigrations
+FS-related option specified for migration configuration. This resets migrationSource to default FsMigrations
+migration 20200709184619_posts.js did not return a promise
+Batch 1 run: 3 migrations
+
+14. we are going to authenticate the users by checking the email and password typed into the fields with the info in the db
+
+15.  db.query("SELECT * FROM Users WHERE email=?", accountInfo.email, function (err, rows) {
+     if (err) {
+       console.log(err);
+       res.redirect('/SignUp');
+     } else {
+       if (rows.length !== 0) {
+         res.send("Login done");
+       } else {
+         res.redirect('/SignUp');
+       }
+     }
+}
+16. I believe that the console will log the encrypted credentials of the person who logged in
