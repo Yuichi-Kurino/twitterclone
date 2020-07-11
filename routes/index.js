@@ -39,7 +39,37 @@ router.post('/authenticateUser', async function (req,res) {
   }
 });
 
-router.post('/register', async function(req, res){
-  
+router.get('/signUp', function(req, res, next) {
+  res.render('signUp',{title:'Express'})
 });
+
+router.post('/register', function(req, res){
+  const accountInfo = {
+    email: req.body.email,
+    password: req.body.password
+  };
+
+  const db = req.con;
+  console.log(db);
+  db.query("SELECT * FROM users WHERE email=?", accountInfo.email, function(err, rows){
+    if(err) {
+      console.log(err);
+    }
+    else {
+      if(rows.length!==0){
+        res.send("Same email address found");
+      }else {
+        db.query("INSERT INTO users SET ?", accountInfo, function (err, rows) {
+          if (err) {
+            console.log(err)
+          } else {
+
+            res.send("Insertion successful")
+          }
+        });
+      }
+    }
+  });
+});
+
 module.exports = router;
