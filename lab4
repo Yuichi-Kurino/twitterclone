@@ -34,4 +34,4 @@ Batch 1 run: 3 migrations
        }
      }
 }
-16. I believe that the console will log the encrypted credentials of the person who logged in
+16. eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YVBhY2tldCI6eyJpZCI6MSwiZW1haWwiOiJlbWFpbEBlbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiJ9LCJpYXQiOjE1OTQ0Mjg5NjMsImV4cCI6MTU5NDQzOTc2M30.YwhEeMH3wRLi

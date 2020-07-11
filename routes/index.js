@@ -1,4 +1,6 @@
 var express = require('express');
+var tokenUtil = require('../auth/tokenUtil');
+var userModel = require('../models/userModel');
 var router = express.Router();
 
 /* GET home page. */
@@ -11,6 +13,7 @@ router.get('/signin', function(req, res){
 });
 
 router.post('/authenticateUser', async function (req,res) {
+  console.log(req.body)
   //check our own database
   const userInfo = await userModel.findUsersByEmail(req.body.email);
 
@@ -34,5 +37,9 @@ router.post('/authenticateUser', async function (req,res) {
       res.end("User Authenticated");
     }
   }
+});
+
+router.post('/register', async function(req, res){
+  
 });
 module.exports = router;

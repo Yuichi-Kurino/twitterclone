@@ -22,4 +22,6 @@ async function insertUser(userJSON){
     }
 
 }
-module.exports = { findUsers, findUsersWithItems, insertUser, insertUsersWithItems};
+
+
+module.exports = {  insertUser, findUsersByEmail};
